@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102451">
+<meta name="description" content="Tutor Student Connect connects students, parents and tutors across Bihar. Register as a tutor, request home tuition and connect with our team.">
+<title>Tutor Student Connect | Bihar</title>
+
+<style>
+:root{
+  --navy:#102451;
+  --blue:#2855dc;
+  --orange:#ffad42;
+  --ink:#17233d;
+  --muted:#65718a;
+  --bg:#f4f7ff;
+  --white:#fff;
+  --line:#e1e7f3;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:78px}
+body{
+  margin:0;font-family:Arial,Helvetica,sans-serif;
+  color:var(--ink);background:#fff;line-height:1.6
+}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font:inherit}
+button,a{touch-action:manipulation}
+.wrap{width:min(1120px,92%);margin:auto}
+header{
+  position:sticky;top:0;z-index:20;background:#fff;
+  border-bottom:1px solid var(--line)
+}
+.nav{
+  min-height:68px;display:flex;align-items:center;
+  justify-content:space-between;gap:12px
+}
+.brand{font-size:18px;font-weight:900;color:var(--navy)}
+.brand span{color:var(--blue)}
+.navlinks{display:flex;align-items:center;gap:17px;font-size:13px;font-weight:700}
+.btn{
+  display:inline-flex;justify-content:center;align-items:center;
+  text-align:center;gap:7px;padding:12px 17px;
+  background:var(--blue);color:white;border:0;
+  border-radius:11px;font-weight:800;cursor:pointer
+}
+.btn.orange{background:var(--orange);color:#192544}
+.btn.light{background:#fff;color:var(--blue);border:1px solid var(--line)}
+.btn.green{background:#138348;color:#fff}
+.hero{
+  padding:58px 0;color:#fff;
+  background:linear-gradient(130deg,#102451,#2855dc)
+}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}
+.tag{
+  display:inline-block;padding:6px 12px;border-radius:30px;
+  background:#ffffff19;border:1px solid #ffffff44;font-size:12px
+}
+h1{font-size:clamp(36px,5vw,58px);line-height:1.12;margin:19px 0}
+.hero p{color:#e4eaff;max-width:570px}
+.actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:24px}
+.hero-card{
+  text-align:center;padding:27px 20px;border-radius:24px;
+  background:#ffffff13;border:1px solid #ffffff40
+}
+.hero-card .emoji{font-size:65px}
+.hero-card h2{font-size:25px;margin:5px}
+.hero-card p{font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.chips span{background:white;color:var(--navy);border-radius:20px;padding:6px 10px;font-size:12px;font-weight:700}
+section{padding:58px 0}
+.center{text-align:center}
+.eyebrow{color:var(--blue);font-weight:900;font-size:12px;letter-spacing:1.3px;text-transform:uppercase}
+h2{font-size:clamp(27px,4vw,37px);line-height:1.2;margin:10px 0}
+.sub{color:var(--muted);max-width:680px;margin:0 auto 28px}
+.soft{background:var(--bg)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.card{
+  background:#fff;border:1px solid var(--line);
+  border-radius:18px;padding:23px;
+  box-shadow:0 7px 25px #142d6508
+}
+.card .icon{font-size:35px}
+.card h3{margin:8px 0}
+.card p{font-size:14px;color:var(--muted)}
+.card .btn{width:100%;margin-top:8px}
+.form-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:25px;align-items:start}
+.info-panel{
+  background:var(--navy);color:#fff;padding:26px;border-radius:20px
+}
+.info-panel p{color:#e0e7ff;font-size:14px}
+.info-panel li{margin:10px 0}
+.form-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+label{font-size:13px;font-weight:800}
+input,select,textarea{
+  width:100%;min-width:0;padding:12px;border:1px solid #d7dfed;
+  border-radius:10px;background:white;color:var(--ink)
+}
+input:focus,select:focus,textarea:focus{
+  outline:2px solid #a9bdff;border-color:var(--blue)
+}
+textarea{resize:vertical}
+.form-card .btn{width:100%;margin-top:16px}
+.note{font-size:12px;color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.step{padding:20px;background:white;border:1px solid var(--line);border-radius:15px}
+.num{display:inline-grid;place-items:center;background:#e7edff;color:var(--blue);width:37px;height:37px;border-radius:11px;font-weight:900}
+.contact-box{padding:30px;text-align:center;background:#fff3df;border-radius:22px}
+.contact-box p{color:var(--muted)}
+footer{background:#0b183b;color:white;padding:32px 0}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
+footer p{color:#c8d2eb;font-size:13px}
+footer a{color:#fff}
+.wa-float{
+  position:fixed;right:15px;bottom:17px;z-index:30;
+  border-radius:50px;padding:13px 17px;
+  color:#fff;background:#138348;box-shadow:0 5px 20px #0002;
+  font-weight:800
+}
+@media(max-width:760px){
+ .nav{min-height:62px}
+ .brand{font-size:15px}
+ .navlinks{gap:8px}
+ .navlinks .hide{display:none}
+ .navlinks .btn{padding:9px 10px;font-size:12px}
+ .hero{padding:43px 0}
+ .hero-grid,.form-layout{grid-template-columns:1fr}
+ .hero-card{padding:19px}
+ section{padding:45px 0}
+ .grid,.steps{grid-template-columns:1fr}
+ .fields{grid-template-columns:1fr}
+ .field.full{grid-column:auto}
+ .form-card,.info-panel{padding:20px}
+ h1{font-size:39px}
+}
+</style>
+</head>
+
+<body>
+<header>
+  <nav class="nav wrap">
+    <a class="brand" href="#">Tutor<span>Student</span> Connect</a>
+    <div class="navlinks">
+      <a class="hide" href="#services">Services</a>
+      <a class="hide" href="#find">Find Tutor</a>
+      <a class="btn" href="#register">Register Now</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-grid wrap">
+    <div>
+      <span class="tag">📚 CONNECTING LEARNERS & EDUCATORS</span>
+      <h1>The Right Tutor.<br>The Brighter Future.</h1>
+      <p>Find learning support or explore teaching opportunities with Tutor Student Connect — your connection to education across Bihar.</p>
+      <div class="actions">
+        <a class="btn orange" href="#find">🎓 Find a Tutor</a>
+        <a class="btn light" href="#register">👩‍🏫 Register as Tutor</a>
+      </div>
+      <p class="note" style="color:#e4eaff">For students, parents and educators across Bihar.</p>
+    </div>
+    <div class="hero-card">
+      <div class="emoji">🎓📚</div>
+      <h2>Learn. Teach. Grow.</h2>
+      <p>One step closer to the right learning opportunity.</p>
+      <div class="chips">
+        <span>Students</span><span>Parents</span><span>Tutors</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap center">
+    <span class="eyebrow">Our Services</span>
+    <h2>One Platform, Two Opportunities</h2>
+    <p class="sub">Simple ways to explore tutoring support or teaching opportunities.</p>
+    <div class="grid">
+      <article class="card">
+        <div class="icon">🎒</div>
+        <h3>For Students & Parents</h3>
+        <p>Share your class, subjects and preferred location to request tutoring support.</p>
+        <a class="btn" href="#find">Find a Tutor</a>
+      </article>
+      <article class="card">
+        <div class="icon">👩‍🏫</div>
+        <h3>For Tutors</h3>
+        <p>Register your teaching profile and explore potential home tuition opportunities.</p>
+        <a class="btn" href="#register">Tutor Registration</a>
+      </article>
+      <article class="card">
+        <div class="icon">📍</div>
+        <h3>Across Bihar</h3>
+        <p>Connect with our team about tutoring needs in your city, town or local area.</p>
+        <a class="btn" href="#contact">Contact Our Team</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="soft" id="register">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Join Our Community</span>
+      <h2>Start Your Journey Today</h2>
+      <p class="sub">Choose the option that matches your needs.</p>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <div class="icon">👨‍🏫</div>
+        <h3>Become a Tutor</h3>
+        <p>Interested in teaching? Complete the tutor registration form and provide your details.</p>
+        <a class="btn" href="https://forms.gle/U43hhYQjiYju4M3" target="_blank" rel="noopener">Open Tutor Registration ↗</a>
+        <p class="note">Opens the existing Google Form. Confirm that this is your current tutor form.</p>
+      </article>
+      <article class="card">
+        <div class="icon">🎓</div>
+        <h3>Student Registration</h3>
+        <p>Tell us about the student, class, subjects and preferred location through the form below.</p>
+        <a class="btn orange" href="#student">Register as Student</a>
+      </article>
+      <article class="card">
+        <div class="icon">💬</div>
+        <h3>Need Help?</h3>
+        <p>Contact our team on WhatsApp if you need help with registration or a tuition request.</p>
+        <a class="btn green" href="https://wa.me/919155908998" target="_blank" rel="noopener">Chat on WhatsApp ↗</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="student">
+  <div class="wrap form-layout">
+    <div class="info-panel">
+      <span class="tag">STUDENT & PARENT ENQUIRY</span>
+      <h2>Tell Us What You Need</h2>
+      <p>Fill in the details. Your phone's WhatsApp app will open with a prepared message for our team.</p>
+      <ul>
+        <li>Class and subjects</li>
+        <li>Preferred city or locality</li>
+        <li>Contact details for follow-up</li>
+      </ul>
+      <p><strong>Important:</strong> Submitting this form opens WhatsApp; it does not automatically save a record in a database.</p>
+    </div>
+    <form class="form-card" id="studentForm">
+      <h2>Student Registration</h2>
+      <div class="fields">
+        <div class="field">
+          <label for="studentName">Student / Parent Name *</label>
+          <input id="studentName" name="name" required maxlength="80" autocomplete="name" placeholder="Enter full name">
+        </div>
+        <div class="field">
+          <label for="studentPhone">Mobile Number *</label>
+          <input id="studentPhone" name="phone" required inputmode="tel" pattern="[6-9][0-9]{9}" maxlength="10" placeholder="10-digit mobile number">
+        </div>
+        <div class="field">
+          <label for="studentClass">Class *</label>
+          <select id="studentClass" name="class" required>
+            <option value="">Select class</option>
+            <option>Nursery</option><option>LKG</option><option>UKG</option>
+            <option>Class 1</option><option>Class 2</option><option>Class 3</option>
+            <option>Class 4</option><option>Class 5</option><option>Class 6</option>
+            <option>Class 7</option><option>Class 8</option><option>Class 9</option>
+            <option>Class 10</option><option>Class 11</option><option>Class 12</option>
+            <option>Competitive Exam</option><option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="studentMode">Tuition Type *</label>
+          <select id="studentMode" name="mode" required>
+            <option value="">Select type</option>
+            <option>Home Tuition</option><option>Online Tuition</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="studentCity">City / District in Bihar *</label>
+          <input id="studentCity" name="city" required maxlength="100" placeholder="e.g. Sasaram, Rohtas">
+        </div>
+        <div class="field">
+          <label for="studentSubject">Subject(s) *</label>
+          <input id="studentSubject" name="subject" required maxlength="150" placeholder="e.g. Maths, Science">
+        </div>
+        <div class="field full">
+          <label for="studentAddress">Locality (optional)</label>
+          <input id="studentAddress" name="address" maxlength="150" placeholder="Area / town / nearby landmark">
+        </div>
+        <div class="field full">
+          <label for="studentNotes">Additional Requirements (optional)</label>
+          <textarea id="studentNotes" name="notes" rows="3" maxlength="500" placeholder="Preferred timing or other details"></textarea>
+        </div>
+      </div>
+      <button class="btn green" type="submit">Send Enquiry on WhatsApp ↗</button>
+      <p class="note">By continuing, you choose to share these details in a WhatsApp message with our team. Avoid entering sensitive personal information.</p>
+    </form>
+  </div>
+</section>
+
+<section id="find" class="soft">
+  <div class="wrap form-layout">
+    <div>
+      <span class="eyebrow">Find a Tutor</span>
+      <h2>Looking for the Right Tutor?</h2>
+      <p class="sub" style="margin:0">Enter the location, class and subject. We will prepare a WhatsApp enquiry so our team can follow up.</p>
+      <div class="card" style="margin-top:22px">
+        <div class="icon">🔎</div>
+        <h3>Search by Your Requirements</h3>
+        <p>This version sends your requirements to our team. It does not yet search a live database of available tutors.</p>
+      </div>
+    </div>
+    <form class="form-card" id="findForm">
+      <h2>Request a Tutor</h2>
+      <div class="fields">
+        <div class="field full">
+          <label for="findCity">City / District *</label>
+          <input id="findCity" required maxlength="100" placeholder="Enter Bihar city or district">
+        </div>
+        <div class="field">
+          <label for="findClass">Student's Class *</label>
+          <select id="findClass" required>
+            <option value="">Choose class</option>
+            <option>Nursery–UKG</option><option>Class 1–5</option>
+            <option>Class 6–8</option><option>Class 9–10</option>
+            <option>Class 11–12</option><option>Competitive Exam</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="findMode">Tuition Type *</label>
+          <select id="findMode" required>
+            <option value="">Choose type</option>
+            <option>Home Tuition</option><option>Online Tuition</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="findSubject">Required Subject(s) *</label>
+          <input id="findSubject" required maxlength="150" placeholder="e.g. All Subjects, Physics">
+        </div>
+      </div>
+      <button class="btn" type="submit">Request Tutor on WhatsApp ↗</button>
+    </form>
+  </div>
+</section>
+
+<section>
+  <div class="wrap center">
+    <span class="eyebrow">How It Works</span>
+    <h2>Three Simple Steps</h2>
+    <div class="steps">
+      <div class="step"><span class="num">01</span><h3>Choose</h3><p>Select tutor registration or request tutoring support.</p></div>
+      <div class="step"><span class="num">02</span><h3>Share Details</h3><p>Complete the relevant form with accurate information.</p></div>
+      <div class="step"><span class="num">03</span><h3>Connect</h3><p>Our team can follow up to discuss your requirements.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="soft">
+  <div class="wrap">
+    <div class="contact-box">
+      <span class="eyebrow">We're Here to Help</span>
+      <h2>Let's Connect on WhatsApp</h2>
+      <p>Have a question about registration or finding a tutor? Contact our team.</p>
+      <a class="btn green" href="https://wa.me/919155908998" target="_blank" rel="noopener">WhatsApp: 9155908998 ↗</a>
+      <p class="note">Other contact numbers: 8579033147 · 6209441247</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <strong>Tutor Student Connect</strong>
+      <p>Connecting Students, Parents & Tutors across Bihar.</p>
+    </div>
+    <div>
+      <a href="#services">Services</a> ·
+      <a href="#register">Registration</a> ·
+      <a href="#find">Find a Tutor</a>
+      <p>© <span id="year"></span> Tutor Student Connect</p>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/919155908998" target="_blank" rel="noopener" aria-label="Contact us on WhatsApp">WhatsApp 💬</a>
+
+<script>
+const WHATSAPP_NUMBER = "919155908998";
+
+function sendWhatsApp(message) {
+  const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
+  window.location.href = url;
+}
+
+document.getElementById("studentForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  if (!this.reportValidity()) return;
+
+  const d = new FormData(this);
+  const message = [
+    "TUTOR STUDENT CONNECT - STUDENT ENQUIRY",
+    "",
+    "Name: " + d.get("name"),
+    "Mobile: " + d.get("phone"),
+    "Class: " + d.get("class"),
+    "Tuition Type: " + d.get("mode"),
+    "City/District: " + d.get("city"),
+    "Subjects: " + d.get("subject"),
+    "Locality: " + (d.get("address") || "Not provided"),
+    "Requirements: " + (d.get("notes") || "Not provided")
+  ].join("\n");
+
+  sendWhatsApp(message);
+});
+
+document.getElementById("findForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  if (!this.reportValidity()) return;
+
+  const city = document.getElementById("findCity").value.trim();
+  const studentClass = document.getElementById("findClass").value;
+  const mode = document.getElementById("findMode").value;
+  const subject = document.getElementById("findSubject").value.trim();
+
+  const message = [
+    "TUTOR STUDENT CONNECT - FIND A TUTOR REQUEST",
+    "",
+    "City/District: " + city,
+    "Class: " + studentClass,
+    "Tuition Type: " + mode,
+    "Subject(s): " + subject,
+    "",
+    "Please contact me about tutor availability."
+  ].join("\n");
+
+  sendWhatsApp(message);
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
